@@ -94,20 +94,15 @@ function Get_Account_Info() {
 
 #=================================================
 echo
-echo "${0##*/} Time Now: $(date  +'%F %T %Z')"
+echo "Time Now: $(date  +'%F %T %Z')"
 
-ACCOUNT=$1
-if [[ -z $ACCOUNT ]];then
-    MY_ACCOUNT=`cat "${KEYS_DIR}/${VALIDATOR_NAME}.addr"`
-    if [[ -z $MY_ACCOUNT ]];then
-        echo " Can't find ${KEYS_DIR}/${VALIDATOR_NAME}.addr"
-        exit 1
-    else
-        ACCOUNT=$MY_ACCOUNT
-    fi
-else
-    acc_fmt="$(echo "$ACCOUNT" |  awk -F ':' '{print $2}')"
-    [[ -z $acc_fmt ]] && ACCOUNT=`cat "${KEYS_DIR}/${ACCOUNT}.addr"`
+UnkWAL_Addr=$1
+ACCOUNT="$("${CALL_CA}" "${UnkWAL_Addr}" hex | tr '[:upper:]' '[:lower:]')"
+acc_wc=${ACCOUNT%%:*}
+acc_hex=${ACCOUNT##*:}
+if [[ ${#acc_hex} -ne 64 ]];then
+    echo "###-ERROR(${FUNCNAME[0]} line $LINENO): Wrong source address!"
+    exit 1
 fi
 echo "Account: $ACCOUNT"
 
