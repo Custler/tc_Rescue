@@ -1,0 +1,18 @@
+{
+    "surf":{
+        "abi": "SurfMultisigWallet.abi.json",
+        "tvc": "SurfMultisigWallet.tvc"
+    },
+    "safe":{
+        "abi": "SafeMultisigWallet.abi.json",
+        "tvc": "SafeMultisigWallet.tvc"
+    },
+    "setcode":{
+        "abi": "SetcodeMultisigWallet.abi.json",
+        "tvc": "SetcodeMultisigWallet.tvc"
+    },
+    "bridge":{
+        "abi": "Bridge.abi.json",
+        "tvc": "Bridge.tvc"
+    }
+}
