@@ -61,3 +61,25 @@ Keys and logs files will be placed to `tc_Rescue/ton-keys` folder
 Contracts codes placed in `tc_Rescue/contracts/` folder  
 You can place new contract (tvc and abi files) to this folder and add it to the list. 
 
+## Check account state
+
+You can check account state by run script
+
+```bash
+./balance_check.sh "address"
+```
+
+where **`address`** can be hex or base64 address format
+
+##### Example
+
+```bash
+$ ./balance_check.sh "Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF"
+
+Time Now: 2021-11-30 22:35:20 MSK
+Account: -1:3333333333333333333333333333333333333333333333333333333333333333
+Status: Deployed and Active
+Has balance : 198827312.140 tokens
+Last operation time: 1970-01-01 03:00:00
+==================================================================================================
+```
