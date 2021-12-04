@@ -83,3 +83,6 @@ Has balance : 198827312.140 tokens
 Last operation time: 1970-01-01 03:00:00
 ==================================================================================================
 ```
+
+## Help  by human. 
+The script is open and free - but, if you need human help - then write a request in issues - but the work will cost % of the amount.
