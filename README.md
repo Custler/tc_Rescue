@@ -84,4 +84,5 @@ Last operation time: 1970-01-01 03:00:00
 ==================================================================================================
 ```
 
-P.S. The script is open and free - but, if you need human help - then write a request in issues - but the work will cost % of the amount.
+## Help  by human. 
+The script is open and free - but, if you need human help - then write a request in issues - but the work will cost % of the amount.
