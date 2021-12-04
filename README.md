@@ -1,12 +1,12 @@
 # Rescue system 
 
-#### If you accidentally send money to wrong address, it can find and deploy contract to the address, and then transfer tokens to other address.
+#### If you accidentally sent coins from the The Open Network (ton.org (http://ton.org/)) to the wallet address created in Everscale network, or in the opposite direction, then this rescue system will allow you to recover coins.
 
 ### NB! You must have seed phrase for the address from which you want to get tokens!  
 
 #### How it works  
 
-Example: If you sent tokens from exchange to "Surf" address (which cannot be managed in the blockchain) and you have seed phrase for this address, you can use script `Resc_wallet_deploy.sh` to find right contract code, deploy this code to address and trasfer tokens to your address, which you can manage.
+Example: If you sent tokens from exchange to "Surf" address (which cannot be managed in the ton.org blockchain) and you have seed phrase for this address, you can use script **`Resc_wallet_deploy.sh`** to find right contract code, deploy this code to address and trasfer tokens to your address, which you can manage.
 
 ## Installation
 To install the system install **`git`** package, and then do the follow:
