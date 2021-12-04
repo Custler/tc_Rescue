@@ -29,6 +29,7 @@ echo "INFO: $(basename "$0") BEGIN $(date +%s) / $(date  +'%F %T %Z')"
 SCRIPT_DIR=`cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P`
 export NODE_TOP_DIR=$(cd "${SCRIPT_DIR}/../" && pwd -P)
 
+NODE_BIN_DIR="$HOME/bin"
 KEYS_DIR="${NODE_TOP_DIR}/ton-keys"
 Contr_path="${NODE_TOP_DIR}/contracts"
 
@@ -37,29 +38,12 @@ LC_Send_MSG_Timeout=20
 
 #=================================================
 # Binaries
-CA_BIN="$(which convert_address)"
-if [[ -z $CA_BIN ]];then
-    echo "###-ERROR(line $LINENO): Can't find 'convert_address'"
-    exit 1
-fi
-export CALL_CA="$CA_BIN"
-
-TC_BIN="$(which tonos-cli)"
-if [[ -z $TC_BIN ]];then
-    echo "###-ERROR(line $LINENO): Can't find 'tonos-cli'"
-    exit 1
-fi
-export CALL_TC="$TC_BIN"
-
-LC_BIN="$(which lite-client)"
-if [[ -z $LC_BIN ]];then
-    echo "###-ERROR(line $LINENO): Can't find 'lite-client'"
-    exit 1
-fi
-export CALL_LC="$LC_BIN --global-config ${NODE_TOP_DIR}/configs/global.config.json"
+export CALL_CA="${NODE_BIN_DIR}/convert_address"
+export CALL_TC="${NODE_BIN_DIR}/tonos-cli"
+export CALL_LC="${NODE_BIN_DIR}/lite-client --global-config ${NODE_TOP_DIR}/configs/global.config.json"
 # LITESERVER_IP="127.0.0.1"
 # LITESERVER_PORT="3031"
-# export CALL_LC="$LC_BIN -p ${KEYS_DIR}/liteserver.pub -a ${LITESERVER_IP}:${LITESERVER_PORT} -t 5"
+# export CALL_LC="${NODE_BIN_DIR}/lite-client -p ${KEYS_DIR}/liteserver.pub -a ${LITESERVER_IP}:${LITESERVER_PORT} -t 5"
 
 ##################################################################################################################
 if [[ "$OS_SYSTEM" == "Linux" ]];then
